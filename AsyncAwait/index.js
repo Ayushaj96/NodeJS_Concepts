@@ -73,35 +73,30 @@ const getDogPic = async () => {
 		console.log(res.body);
 
 		await writeFilePro('dog-img.txt', res.body.message);
-		console.log('saved');
+		console.log('Saved');
 	} catch (err) {
-		console.log(err);
 		throw err;
 	}
+	return 'Success'
 };
 
-getDogPic();
-
 /*
+getDogPic()
+  .then((x) => {
+    console.log(x);
+  })
+  .catch((err) => {
+    console.log('Error: ', err);
+  });
+*/
+
 (async () => {
   try {
-    console.log('1');
     const data = await getDogPic();
     console.log(data);
-    console.log('3');
   } catch (err) {
     console.log(err);
   }
 })();
-/*
-/*
-console.log('1');
-getDogPic()
-  .then((x) => {
-    console.log(x);
-    console.log('3');
-  })
-  .catch((err) => {
-    console.log(err);
-  });
-*/
+
+
